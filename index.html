@@ -16,23 +16,24 @@
   body {
     font-family: 'Inter', sans-serif;
     line-height: 1.6;
+    scroll-behavior: smooth;
+    background-color: #f0f4f8;
     color: #111;
-    background-color: #fefefe;
-    scroll-behavior: smooth; /* smooth scrolling */
   }
 
-  /* Fixed Header / Navigation */
+  /* Header / Navigation */
   header {
     position: fixed;
     top: 0;
     width: 100%;
-    background-color: #fff;
-    border-bottom: 1px solid #ddd;
+    background: linear-gradient(90deg, #4facfe 0%, #00f2fe 100%);
+    color: #fff;
     z-index: 1000;
     padding: 15px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
   }
 
   header h1 {
@@ -42,34 +43,46 @@
   nav a {
     margin-left: 20px;
     text-decoration: none;
-    color: #007bff;
+    color: #fff;
     font-weight: 600;
+    transition: color 0.3s;
   }
 
   nav a:hover {
-    text-decoration: underline;
+    color: #ffeb3b;
   }
 
-  /* Spacing for sections after fixed header */
   main {
     margin-top: 80px;
     padding: 0 20px;
   }
 
   section {
-    margin-bottom: 40px;
+    margin-bottom: 50px;
+    padding: 40px 20px;
+    border-radius: 12px;
+  }
+
+  section:nth-child(odd) {
+    background-color: #ffffff;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  }
+
+  section:nth-child(even) {
+    background-color: #e3f2fd;
   }
 
   section h2 {
-    font-size: 1.8rem;
-    margin-bottom: 15px;
-    border-bottom: 2px solid #ddd;
-    padding-bottom: 5px;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #0d47a1;
+    border-bottom: 3px solid #4facfe;
+    padding-bottom: 10px;
   }
 
   section p, section li {
     margin-bottom: 10px;
-    font-size: 1rem;
+    font-size: 1.05rem;
   }
 
   ul {
@@ -85,19 +98,27 @@
   }
 
   .project-card {
-    border: 1px solid #ddd;
-    padding: 15px;
-    border-radius: 8px;
-    background-color: #fff;
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+
+  .project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
   }
 
   .project-card h3 {
-    margin-bottom: 8px;
+    color: #1976d2;
+    margin-bottom: 10px;
   }
 
   .project-card a {
-    color: #007bff;
+    color: #4facfe;
     text-decoration: none;
+    font-weight: 600;
   }
 
   .project-card a:hover {
@@ -106,7 +127,7 @@
 
   /* Contact links */
   #contact a {
-    color: #007bff;
+    color: #4facfe;
     text-decoration: none;
   }
 
@@ -132,7 +153,6 @@
 </head>
 <body>
 
-<!-- Header / Navigation -->
 <header>
   <h1>Saheed O. Ipaye</h1>
   <nav>
@@ -144,16 +164,13 @@
   </nav>
 </header>
 
-<!-- Main Content -->
 <main>
 
-<!-- About Me -->
 <section id="about">
   <h2>About Me</h2>
   <p>DevOps enthusiast with hands-on experience in deploying containerized applications, managing AWS/GCP infrastructure, and building CI/CD pipelines. Passionate about automation, scalability, and improving development workflows. Skilled in AWS, Docker, Kubernetes, Terraform, CI/CD pipelines, and cloud security best practices.</p>
 </section>
 
-<!-- Skills -->
 <section id="skills">
   <h2>Skills</h2>
   <ul>
@@ -165,7 +182,6 @@
   </ul>
 </section>
 
-<!-- Projects -->
 <section id="projects">
   <h2>Projects</h2>
   <div class="project-grid">
@@ -173,33 +189,32 @@
       <h3>E-commerce Application</h3>
       <p>A full-stack, containerized e-commerce payment platform deployed using Terraform, Docker, and GitHub Actions CI/CD. Production-ready API, multi-stage Docker builds, and scalable infrastructure.</p>
       <p><strong>Skills:</strong> Docker, Node.js, AWS EC2, GitHub Actions, Terraform, HTML</p>
-      <a href="https://github.com/Saheed94/E-Commerce-API-Monitoring" target="_blank">View on GitHub</a>
+      <a href="https://github.com/Saheed94/E-commerce-Application" target="_blank">View on GitHub</a>
     </div>
 
     <div class="project-card">
       <h3>Terraform E-commerce App Setup</h3>
       <p>Production-grade AWS infrastructure automation with custom VPC, multi-AZ subnets, security groups, and automated EC2 provisioning for the Node.js payment API.</p>
       <p><strong>Skills:</strong> Terraform, CI/CD Pipelines, Bash/Shell Scripting, GitHub</p>
-      <a href="https://github.com/Saheed94/Terraform-AWS-Infra" target="_blank">View on GitHub</a>
+      <a href="https://github.com/Saheed94/Terraform_Ecommerce_App" target="_blank">View on GitHub</a>
     </div>
 
     <div class="project-card">
       <h3>Cloudflare Secure Deployment</h3>
       <p>Secured Node.js E-Commerce App with Cloudflare, custom domain, HTTPS via Certbot, Nginx reverse proxy, and HTTP→HTTPS redirection for production-grade web security.</p>
       <p><strong>Skills:</strong> Cloudflare, DNS, SSL, Nginx</p>
-      <a href="https://dev.saheedipayetech.com" target="_blank">Visit Site</a>
+      <a href="https://www.linkedin.com/in/saheed-ipaye/details/projects/" target="_blank">Visit Site</a>
     </div>
 
     <div class="project-card">
       <h3>Monitoring Stack with Prometheus & Grafana</h3>
       <p>Complete observability stack for E-Commerce API. Provides real-time metrics collection, visualization, and alerting using Prometheus & Grafana.</p>
       <p><strong>Skills:</strong> AWS EC2, Docker, Prometheus.io, Grafana</p>
-      <a href="https://github.com/Saheed94/E-Commerce-API-Monitoring" target="_blank">View on GitHub</a>
+      <a href="https://github.com/Saheed94/Monitoring-Stack-with-Prometheus-Grafana" target="_blank">View on GitHub</a>
     </div>
   </div>
 </section>
 
-<!-- Certifications -->
 <section id="certifications">
   <h2>Certifications</h2>
   <ul>
@@ -209,7 +224,6 @@
   </ul>
 </section>
 
-<!-- Contact -->
 <section id="contact">
   <h2>Contact</h2>
   <p>Email: saheed@example.com</p>
