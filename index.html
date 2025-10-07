@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Saheed Olatunde Ipaye | Cloud/DevOps Engineer</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+
 <style>
   /* Reset */
   * {
@@ -16,73 +17,64 @@
   body {
     font-family: 'Inter', sans-serif;
     line-height: 1.6;
-    scroll-behavior: smooth;
-    background-color: #f0f4f8;
     color: #111;
+    background-color: #fefefe;
+    scroll-behavior: smooth;
   }
 
-  /* Header / Navigation */
+  /* Fixed Header / Navigation */
   header {
     position: fixed;
     top: 0;
     width: 100%;
-    background: linear-gradient(90deg, #4facfe 0%, #00f2fe 100%);
-    color: #fff;
+    background: rgba(255, 255, 255, 0.98);
+    border-bottom: 1px solid #ddd;
     z-index: 1000;
     padding: 15px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    backdrop-filter: blur(8px);
   }
 
   header h1 {
     font-size: 1.5rem;
+    font-weight: 700;
+    color: #007bff;
   }
 
   nav a {
     margin-left: 20px;
     text-decoration: none;
-    color: #fff;
+    color: #007bff;
     font-weight: 600;
     transition: color 0.3s;
   }
 
   nav a:hover {
-    color: #ffeb3b;
+    color: #0056b3;
   }
 
   main {
-    margin-top: 80px;
+    margin-top: 90px;
     padding: 0 20px;
   }
 
   section {
-    margin-bottom: 50px;
-    padding: 40px 20px;
-    border-radius: 12px;
-  }
-
-  section:nth-child(odd) {
-    background-color: #ffffff;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-  }
-
-  section:nth-child(even) {
-    background-color: #e3f2fd;
+    margin-bottom: 60px;
   }
 
   section h2 {
-    font-size: 2rem;
-    margin-bottom: 20px;
-    color: #0d47a1;
-    border-bottom: 3px solid #4facfe;
-    padding-bottom: 10px;
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 5px;
+    color: #222;
   }
 
   section p, section li {
     margin-bottom: 10px;
-    font-size: 1.05rem;
+    font-size: 1rem;
   }
 
   ul {
@@ -90,33 +82,78 @@
     padding-left: 20px;
   }
 
+  /* About Section */
+  #about {
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.7)), 
+                url('images/devops-background.jpg') center/cover no-repeat;
+    color: #fff;
+    padding: 80px 20px;
+    border-radius: 12px;
+    text-align: center;
+  }
+
+  #about h1 {
+    font-size: 2.8rem;
+    font-weight: 800;
+    color: #fff;
+    margin-bottom: 15px;
+  }
+
+  #about p {
+    max-width: 900px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+    color: #eaeaea;
+  }
+
+  /* Work Experience */
+  #experience .job {
+    background-color: #fff;
+    border-left: 5px solid #007bff;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+  }
+
+  .job h3 {
+    color: #007bff;
+    margin-bottom: 5px;
+  }
+
+  .job h4 {
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 10px;
+  }
+
+  .job ul {
+    list-style-type: disc;
+    padding-left: 20px;
+  }
+
   /* Projects */
   .project-grid {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 20px;
   }
 
   .project-card {
-    background: #ffffff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 6px 12px rgba(0,0,0,0.1);
-    transition: transform 0.3s, box-shadow 0.3s;
-  }
-
-  .project-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
   }
 
   .project-card h3 {
-    color: #1976d2;
-    margin-bottom: 10px;
+    color: #007bff;
+    margin-bottom: 8px;
   }
 
   .project-card a {
-    color: #4facfe;
+    color: #007bff;
     text-decoration: none;
     font-weight: 600;
   }
@@ -125,9 +162,9 @@
     text-decoration: underline;
   }
 
-  /* Contact links */
+  /* Contact */
   #contact a {
-    color: #4facfe;
+    color: #007bff;
     text-decoration: none;
   }
 
@@ -153,10 +190,12 @@
 </head>
 <body>
 
+<!-- Header -->
 <header>
   <h1>Saheed O. Ipaye</h1>
   <nav>
     <a href="#about">About</a>
+    <a href="#experience">Experience</a>
     <a href="#skills">Skills</a>
     <a href="#projects">Projects</a>
     <a href="#certifications">Certifications</a>
@@ -164,57 +203,93 @@
   </nav>
 </header>
 
+<!-- Main -->
 <main>
 
+<!-- About Me -->
 <section id="about">
-  <h2>About Me</h2>
-  <p>DevOps enthusiast with hands-on experience in deploying containerized applications, managing AWS/GCP infrastructure, and building CI/CD pipelines. Passionate about automation, scalability, and improving development workflows. Skilled in AWS, Docker, Kubernetes, Terraform, CI/CD pipelines, and cloud security best practices.</p>
+  <h1>Saheed Olatunde Ipaye</h1>
+  <p>Detail-oriented and results-driven DevOps Engineer with 3+ years of hands-on experience in I.T, Cloud Infrastructure, Docker, CI/CD pipelines, automation, monitoring, and observability. Adept in deploying scalable, secure systems using AWS and Google Cloud Platform. Proficient in optimizing deployment workflows using GitHub Actions and scripting with Bash. Proven ability to troubleshoot complex production issues, improve system uptime, and streamline software delivery in agile environments.</p>
 </section>
 
+<!-- Work Experience -->
+<section id="experience">
+  <h2>Work Experience</h2>
+
+  <div class="job">
+    <h3>DevOps Engineer / Cloud Engineer</h3>
+    <h4>Aquiline Technology – Remote | 2024 - Present</h4>
+    <ul>
+      <li>Developed and maintained CI/CD pipelines using GitHub Actions to streamline deployments and reduce errors by 40%.</li>
+      <li>Built and scaled containerized applications on Google Cloud Platform using Docker and managed compute instances efficiently.</li>
+      <li>Implemented Infrastructure as Code (IaC) with Terraform, achieving 80% reduction in provisioning time.</li>
+      <li>Integrated Prometheus and Grafana to improve observability and proactive system monitoring by 60%.</li>
+      <li>Collaborated cross-functionally in agile sprints to deliver reliable, production-ready infrastructure.</li>
+    </ul>
+  </div>
+
+  <div class="job">
+    <h3>DevOps Engineer</h3>
+    <h4>Edureka – Remote | 2023 - 2024</h4>
+    <ul>
+      <li>Built and deployed scalable web applications using Docker on AWS EC2 within custom VPCs.</li>
+      <li>Automated CI/CD pipelines with GitHub Actions, reducing deployment time by 60% and ensuring consistent releases.</li>
+      <li>Authored reusable Bash scripts for server setup, maintenance, and system backups—cutting provisioning time by 70%.</li>
+      <li>Published 50+ Docker images to Docker Hub, enabling seamless and repeatable deployments.</li>
+    </ul>
+  </div>
+
+  <div class="job">
+    <h3>Program Assistant (I.T Support)</h3>
+    <h4>Institute of Human Virology Nigeria (IHVN) – Abuja | 2018 - 2023</h4>
+    <ul>
+      <li>Delivered Tier-1 & Tier-2 IT support, resolving 95% of user-reported issues through proactive troubleshooting.</li>
+      <li>Configured and maintained Windows systems, networks, and applications, ensuring 99% uptime for core services.</li>
+      <li>Deployed and maintained IT inventory management processes, reducing hardware downtime by 30%.</li>
+      <li>Trained 50+ staff members on cybersecurity awareness and IT best practices to strengthen system security posture.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- Skills -->
 <section id="skills">
   <h2>Skills</h2>
   <ul>
-    <li>CI/CD & Automation: Built efficient pipelines using GitHub Actions for seamless deployment to Development, Testing, and Production environments.</li>
-    <li>Containerization & Orchestration: Docker, Docker Compose – Deployed multi-container applications with efficient networking.</li>
-    <li>Cloud Platforms: AWS (VPC, EC2, S3, IAM), GCP – Managed secured cloud infrastructure for scalable applications.</li>
-    <li>Operating Systems: Linux (Ubuntu, Debian), MacOS – Skilled in system administration, shell scripting, and automation.</li>
-    <li>Version Control: Git, GitHub – Proficient in source code management and collaborative workflows.</li>
+    <li>CI/CD & Automation – GitHub Actions, Jenkins</li>
+    <li>Containerization & Orchestration – Docker, Kubernetes</li>
+    <li>Infrastructure as Code – Terraform</li>
+    <li>Cloud Platforms – AWS, GCP</li>
+    <li>Monitoring – Prometheus, Grafana</li>
+    <li>Operating Systems – Linux (Ubuntu, Debian)</li>
+    <li>Scripting – Bash, Python</li>
   </ul>
 </section>
 
+<!-- Projects -->
 <section id="projects">
   <h2>Projects</h2>
   <div class="project-grid">
     <div class="project-card">
       <h3>E-commerce Application</h3>
-      <p>A full-stack, containerized e-commerce payment platform deployed using Terraform, Docker, and GitHub Actions CI/CD. Production-ready API, multi-stage Docker builds, and scalable infrastructure.</p>
-      <p><strong>Skills:</strong> Docker, Node.js, AWS EC2, GitHub Actions, Terraform, HTML</p>
+      <p>Containerized e-commerce API deployed with Terraform, Docker, and GitHub Actions CI/CD. Features multi-stage Docker builds and scalable AWS infrastructure.</p>
       <a href="https://github.com/Saheed94/E-commerce-Application" target="_blank">View on GitHub</a>
     </div>
 
     <div class="project-card">
       <h3>Terraform E-commerce App Setup</h3>
-      <p>Production-grade AWS infrastructure automation with custom VPC, multi-AZ subnets, security groups, and automated EC2 provisioning for the Node.js payment API.</p>
-      <p><strong>Skills:</strong> Terraform, CI/CD Pipelines, Bash/Shell Scripting, GitHub</p>
+      <p>Automated AWS infrastructure setup with Terraform — VPC, subnets, and EC2 provisioning for a Node.js app.</p>
       <a href="https://github.com/Saheed94/Terraform_Ecommerce_App" target="_blank">View on GitHub</a>
     </div>
 
     <div class="project-card">
-      <h3>Cloudflare Secure Deployment</h3>
-      <p>Secured Node.js E-Commerce App with Cloudflare, custom domain, HTTPS via Certbot, Nginx reverse proxy, and HTTP→HTTPS redirection for production-grade web security.</p>
-      <p><strong>Skills:</strong> Cloudflare, DNS, SSL, Nginx</p>
-      <a href="https://www.linkedin.com/in/saheed-ipaye/details/projects/" target="_blank">Visit Site</a>
-    </div>
-
-    <div class="project-card">
-      <h3>Monitoring Stack with Prometheus & Grafana</h3>
-      <p>Complete observability stack for E-Commerce API. Provides real-time metrics collection, visualization, and alerting using Prometheus & Grafana.</p>
-      <p><strong>Skills:</strong> AWS EC2, Docker, Prometheus.io, Grafana</p>
+      <h3>Monitoring Stack (Prometheus & Grafana)</h3>
+      <p>Built a monitoring stack for an e-commerce API with Prometheus and Grafana for metrics visualization and alerting.</p>
       <a href="https://github.com/Saheed94/Monitoring-Stack-with-Prometheus-Grafana" target="_blank">View on GitHub</a>
     </div>
   </div>
 </section>
 
+<!-- Certifications -->
 <section id="certifications">
   <h2>Certifications</h2>
   <ul>
@@ -224,9 +299,10 @@
   </ul>
 </section>
 
+<!-- Contact -->
 <section id="contact">
   <h2>Contact</h2>
-  <p>Email: saheedipayetech@gmail.com</p>
+  <p>Email: saheed@example.com</p>
   <p>LinkedIn: <a href="https://linkedin.com/in/saheed94" target="_blank">linkedin.com/in/saheed94</a></p>
   <p>GitHub: <a href="https://github.com/Saheed94" target="_blank">github.com/Saheed94</a></p>
 </section>
